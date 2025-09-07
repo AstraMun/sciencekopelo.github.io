@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DuoScience — Class 10</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#00C853">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="owl">🧪</div>
+      <div>
+        <h1>DuoScience</h1>
+        <p class="subtitle">Class 10 Science • Learn daily</p>
+      </div>
+    </div>
+    <nav>
+      <button id="btn-home" class="link" aria-label="Home">🏠</button>
+      <button id="btn-chapters" class="link" aria-label="Chapters">📚</button>
+      <button id="btn-progress" class="link" aria-label="Progress">📈</button>
+      <button id="btn-settings" class="link" aria-label="Settings">⚙️</button>
+    </nav>
+  </header>
+
+  <main id="view">
+    <!-- Home View -->
+    <section id="home-view" class="view active">
+      <div class="card goal">
+        <h2>Daily Goal</h2>
+        <div class="goal-row">
+          <label for="daily-goal">Minutes</label>
+          <input type="range" id="daily-goal" min="5" max="60" step="5" value="15">
+          <span id="goal-value">15</span>
+        </div>
+        <p id="goal-tip">Set a small, consistent goal. Streaks love consistency.</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-value" id="xp">0</div>
+          <div class="stat-label">XP</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="streak">0 🔥</div>
+          <div class="stat-label">Day Streak</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="crowns">0 👑</div>
+          <div class="stat-label">Crowns</div>
+        </div>
+      </div>
+
+      <div class="continue card">
+        <h2>Continue lesson</h2>
+        <p id="continue-desc">Pick up where you left off.</p>
+        <button id="btn-continue" class="primary">Start</button>
+      </div>
+
+      <div class="roadmap">
+        <h2>Roadmap</h2>
+        <div id="roadmap-grid" class="grid"></div>
+      </div>
+    </section>
+
+    <!-- Chapters View -->
+    <section id="chapters-view" class="view">
+      <h2>Chapters</h2>
+      <div id="chapters-list" class="grid"></div>
+    </section>
+
+    <!-- Progress View -->
+    <section id="progress-view" class="view">
+      <h2>Your progress</h2>
+      <canvas id="xp-chart" width="400" height="200" aria-label="XP last 14 days"></canvas>
+      <div class="card">
+        <h3>Badges</h3>
+        <ul id="badges" class="badge-list"></ul>
+      </div>
+    </section>
+
+    <!-- Settings View -->
+    <section id="settings-view" class="view">
+      <h2>Settings</h2>
+      <label class="row">
+        <span>Reset progress</span>
+        <button id="reset" class="danger">Reset</button>
+      </label>
+      <p class="muted">App data is stored locally in your browser.</p>
+    </section>
+
+    <!-- Lesson Modal -->
+    <div id="lesson-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="lesson-title">
+      <div class="modal-content">
+        <div class="lesson-header">
+          <h3 id="lesson-title"></h3>
+          <button id="close-lesson" class="link">✖</button>
+        </div>
+        <div id="lesson-body"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <small>Built for Class 10 Science learning • Works offline • v1.0</small>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

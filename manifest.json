@@ -1,0 +1,9 @@
+{
+  "name": "DuoScience \u2014 Class 10",
+  "short_name": "DuoScience",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00C853",
+  "icons": []
+}
